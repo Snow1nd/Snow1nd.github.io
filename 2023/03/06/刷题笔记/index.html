@@ -6,15 +6,15 @@
   
   <title>刷题笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="算法是男人的浪漫 动态规划01背包，完全背包，多重背包，区间dp，状态压缩dp，树形dp，记忆化搜索 贪心算法区间按左端点排序，按右端点排序，哈夫曼树 回溯递归回溯处理好变量 算法总结-2023.3.5 《八数码》总结状态表示：九宫格用string表示状态，即转为一位，需要存进queue 状态转移：用string find函数找到一维位置，一维位置转化为二维位置，再上下左右移动，用vx，vy数组表">
+  <meta name="description" content="算法的浪漫 动态规划01背包，完全背包，多重背包，区间dp，状态压缩dp，树形dp，记忆化搜索 贪心算法区间按左端点排序，按右端点排序，哈夫曼树 回溯递归回溯处理好变量 算法总结-2023.3.5 《八数码》总结状态表示：九宫格用string表示状态，即转为一位，需要存进queue 状态转移：用string find函数找到一维位置，一维位置转化为二维位置，再上下左右移动，用vx，vy数组表示四个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="刷题笔记">
 <meta property="og:url" content="http://example.com/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="算法是男人的浪漫 动态规划01背包，完全背包，多重背包，区间dp，状态压缩dp，树形dp，记忆化搜索 贪心算法区间按左端点排序，按右端点排序，哈夫曼树 回溯递归回溯处理好变量 算法总结-2023.3.5 《八数码》总结状态表示：九宫格用string表示状态，即转为一位，需要存进queue 状态转移：用string find函数找到一维位置，一维位置转化为二维位置，再上下左右移动，用vx，vy数组表">
+<meta property="og:description" content="算法的浪漫 动态规划01背包，完全背包，多重背包，区间dp，状态压缩dp，树形dp，记忆化搜索 贪心算法区间按左端点排序，按右端点排序，哈夫曼树 回溯递归回溯处理好变量 算法总结-2023.3.5 《八数码》总结状态表示：九宫格用string表示状态，即转为一位，需要存进queue 状态转移：用string find函数找到一维位置，一维位置转化为二维位置，再上下左右移动，用vx，vy数组表示四个">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-06T09:01:23.000Z">
-<meta property="article:modified_time" content="2023-03-06T07:52:07.257Z">
+<meta property="article:modified_time" content="2023-03-06T14:34:04.038Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -95,7 +95,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="算法是男人的浪漫"><a href="#算法是男人的浪漫" class="headerlink" title="算法是男人的浪漫"></a>算法是男人的浪漫</h4><hr>
+        <h4 id="算法的浪漫"><a href="#算法的浪漫" class="headerlink" title="算法的浪漫"></a>算法的浪漫</h4><hr>
 <h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>01背包，完全背包，多重背包，区间dp，状态压缩dp，树形dp，记忆化搜索</p>
 <h4 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>区间按左端点排序，按右端点排序，哈夫曼树</p>
 <h4 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h4><p>递归回溯处理好变量</p>
@@ -105,11 +105,33 @@
 <p>该位置走完，从队列找到下一个。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">unordered_map&lt;string,<span class="type">int</span>&gt; d;</span><br><span class="line">string st,ed=<span class="string">&quot;12345678x&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bfs</span><span class="params">(string st)</span></span>&#123;</span><br><span class="line">    queue&lt;string&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(st);</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> vx[]=&#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;,vy[]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        <span class="keyword">auto</span> t=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> l=t.<span class="built_in">find</span>(<span class="string">&#x27;x&#x27;</span>),distant=d[t];</span><br><span class="line">        <span class="keyword">if</span>(t==ed)<span class="keyword">return</span> distant;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> x=l/<span class="number">3</span>,y=l%<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            <span class="type">int</span> a=x+vx[i],b=y+vy[i];</span><br><span class="line">            <span class="keyword">if</span>(a&gt;=<span class="number">0</span>&amp;&amp;a&lt;<span class="number">3</span>&amp;&amp;b&gt;=<span class="number">0</span>&amp;&amp;b&lt;<span class="number">3</span>)&#123;</span><br><span class="line">                <span class="built_in">swap</span>(t[l],t[a*<span class="number">3</span>+b]);</span><br><span class="line">                <span class="keyword">if</span>(!d.<span class="built_in">count</span>(t))&#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(t);</span><br><span class="line">                    d[t]=distant+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">swap</span>(t[l],t[a*<span class="number">3</span>+b]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;</span><br><span class="line">            <span class="type">char</span> a;</span><br><span class="line">            cin&gt;&gt;a;</span><br><span class="line">            st+=a;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    d[st]=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    cout&lt;&lt;<span class="built_in">bfs</span>(st)&lt;&lt;endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h4 id="spfa"><a href="#spfa" class="headerlink" title="spfa"></a>spfa</h4><p>终于来到SPFA算法了！之前已经说明过了Bellman_ford算法 ,我们今天说明的SPFA算法仅仅只是对该算法的一个优化。<br>Bellman_ford算法会遍历所有的边，但是有很多的边遍历了其实没有什么意义，我们只用遍历那些到源点距离变小的点所连接的边即可，只有当一个点的前驱结点更新了，该节点才会得到更新；因此考虑到这一点，我们将创建一个队列每一次加入距离被更新的结点。</p>
+<h5 id="值得注意的是"><a href="#值得注意的是" class="headerlink" title="值得注意的是"></a>值得注意的是</h5><ol>
+<li><strong>st数组的作用：</strong>判断当前的点是否已经加入到队列当中了；已经加入队列的结点就不需要反复的把该点加入到队列中了，就算此次还是会更新到源点的距离，那只用更新一下数值而不用加入到队列当中。<br>即便不使用st数组最终也没有什么关系，但是使用的好处在于可以提升效率。</li>
+<li>SPFA算法看上去和Dijstra算法长得有一些像但是其中的意义还是相差甚远的:</li>
+</ol>
+<blockquote>
+<p>1] Dijkstra算法中的st数组保存的是当前确定了到源点距离最小的点，且一旦确定了最小那么就不可逆了(不可标记为true后改变为false)；SPFA算法中的st数组仅仅只是表示的当前发生过更新的点，且spfa中的st数组可逆(可以在标记为true之后又标记为false)。顺带一提的是BFS中的st数组记录的是当前已经被遍历过的点。<br>2] Dijkstra算法里使用的是优先队列保存的是当前未确定最小距离的点，目的是快速的取出当前到源点距离最小的点；SPFA算法中使用的是队列(你也可以使用别的数据结构),目的只是记录一下当前发生过更新的点。</p>
+</blockquote>
+<ol start="3">
+<li>⭐️Bellman_ford算法里最后return-1的判断条件写的是dist[n]&gt;0x3f3f3f3f&#x2F;2;而spfa算法写的是dist[n]&#x3D;&#x3D;0x3f3f3f3f;其原因在于Bellman_ford算法会遍历所有的边，因此不管是不是和源点连通的边它都会得到更新；但是SPFA算法不一样，它相当于采用了BFS，因此遍历到的结点都是与源点连通的，因此如果你要求的n和源点不连通，它不会得到更新，还是保持的0x3f3f3f3f。</li>
+<li><strong>⭐️ Bellman_ford算法可以存在负权回路，是因为其循环的次数是有限制的因此最终不会发生死循环；但是SPFA算法不可以，由于用了队列来存储，只要发生了更新就会不断的入队，因此假如有负权回路请你不要用SPFA否则会死循环。</strong></li>
+<li>⭐️由于SPFA算法是由Bellman_ford算法优化而来，在最坏的情况下时间复杂度和它一样即时间复杂度为 O(nm)O(nm) ，假如题目时间允许可以直接用SPFA算法去解Dijkstra算法的题目。(好像SPFA有点小小万能的感觉?)</li>
+<li>⭐️求负环一般使用SPFA算法，方法是用一个cnt数组记录每个点到源点的边数，一个点被更新一次就+1，一旦有点的边数达到了n那就证明存在了负环。</li>
+</ol>
+<blockquote>
+<p>Dijkstra-朴素O(n^2)</p>
+<p>初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离<br>将不在S中dist_min的点-&gt;t<br>t-&gt;S加入最短路集合<br>用t更新到其他点的距离<br>Dijkstra-堆优化O(mlogm)</p>
+<p>利用邻接表，优先队列<br>在priority_queue[HTML_REMOVED], greater[HTML_REMOVED] &gt; heap;中将返回堆顶<br>利用堆顶来更新其他点，并加入堆中类似宽搜<br>Bellman_fordO(nm)</p>
+<p>注意连锁想象需要备份, struct Edge{inta,b,c} Edge[M];<br>初始化dist, 松弛dist[x.b] &#x3D; min(dist[x.b], backup[x.a]+x.w);<br>松弛k次，每次访问m条边<br>Spfa O(n)~O(nm)</p>
+<p>利用队列优化仅加入修改过的地方<br>for k次<br>for 所有边利用宽搜模型去优化bellman_ford算法<br>更新队列中当前点的所有出边<br>Floyd O(n^3)</p>
+<p>初始化d<br>k, i, j 去更新d</p>
+</blockquote>
 <h5 id="by-xf"><a href="#by-xf" class="headerlink" title="by xf"></a>by xf</h5>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="clewiydxg000194to0qrw7nyh" data-title="刷题笔记" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="clewxiw760001r8to5uleb1u7" data-title="刷题笔记" class="article-share-link">Share</a>
       
       
       
@@ -118,6 +140,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2023/03/06/%E5%9B%BE%E8%AE%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2023/03/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -158,6 +189,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/03/06/%E5%9B%BE%E8%AE%BA/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a>

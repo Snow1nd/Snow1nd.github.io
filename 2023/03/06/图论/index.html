@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Dijkstra-朴素O(n^2)1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离3.将不在S中dist_min的点-&gt;t4.t-&gt;S加入最短路集合5.用t更新到其他点的距离 Dijkstra-堆优化O(mlogm)1.利用邻接表，优先队列2.在pri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Dijkstra-朴素O(n^2)1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离3.将不在S中dist_min的点-&gt;t4.t-&gt;S加入最短路集合5.用t更新到其他点的距离 Dijkstra-堆优化O(mlogm)1.利用邻接表，优先队列2.在pri">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-06T14:33:25.321Z">
+<meta property="article:modified_time" content="2023-03-06T14:35:50.472Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-图论" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/06/%E5%9B%BE%E8%AE%BA/" class="article-date">
+  <time class="dt-published" datetime="2023-03-06T14:33:25.321Z" itemprop="datePublished">2023-03-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<h5 id="Dijkstra-朴素O-n-2"><a href="#Dijkstra-朴素O-n-2" class="headerlink" title="Dijkstra-朴素O(n^2)"></a>Dijkstra-朴素O(n^2)</h5><p>1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离<br>3.将不在S中dist_min的点-&gt;t<br>4.t-&gt;S加入最短路集合<br>5.用t更新到其他点的距离</p>
+<h5 id="Dijkstra-堆优化O-mlogm"><a href="#Dijkstra-堆优化O-mlogm" class="headerlink" title="Dijkstra-堆优化O(mlogm)"></a>Dijkstra-堆优化O(mlogm)</h5><p>1.利用邻接表，优先队列<br>2.在priority_queue[HTML_REMOVED], greater[HTML_REMOVED] &gt; heap;中将返回堆顶<br>3.利用堆顶来更新其他点，并加入堆中类似宽搜</p>
+<h5 id="Bellman-fordO-nm"><a href="#Bellman-fordO-nm" class="headerlink" title="Bellman_fordO(nm)"></a>Bellman_fordO(nm)</h5><p>1.注意连锁想象需要备份, struct Edge{inta,b,c} Edge[M];<br>2.初始化dist, 松弛dist[x.b] &#x3D; min(dist[x.b], backup[x.a]+x.w);<br>3.松弛k次，每次访问m条边</p>
+<h5 id="Spfa-O-n-O-nm"><a href="#Spfa-O-n-O-nm" class="headerlink" title="Spfa O(n)~O(nm)"></a>Spfa O(n)~O(nm)</h5><p>1.利用队列优化仅加入修改过的地方<br>2.for k次<br>3.for 所有边利用宽搜模型去优化bellman_ford算法<br>4.更新队列中当前点的所有出边</p>
+<h5 id="Floyd-O-n-3"><a href="#Floyd-O-n-3" class="headerlink" title="Floyd O(n^3)"></a>Floyd O(n^3)</h5><p>1.初始化d<br>2.k, i, j 去更新d</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/" data-id="clewxiw780002r8to7tfvbom5" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">刷题笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/06/%E5%9B%BE%E8%AE%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
