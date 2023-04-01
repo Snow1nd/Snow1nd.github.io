@@ -83,18 +83,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <blockquote>
-<h5 id="Dijkstra-朴素O-n-2"><a href="#Dijkstra-朴素O-n-2" class="headerlink" title="Dijkstra-朴素O(n^2)"></a>Dijkstra-朴素O(n^2)</h5><p>1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离<br>3.将不在S中dist_min的点-&gt;t<br>4.t-&gt;S加入最短路集合<br>5.用t更新到其他点的距离</p>
+        <h5 id="Dijkstra-朴素O-n-2"><a href="#Dijkstra-朴素O-n-2" class="headerlink" title="Dijkstra-朴素O(n^2)"></a>Dijkstra-朴素O(n^2)</h5><p>1.<strong>初始化</strong>距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>2.for n次循环 每次循环确定<strong>一个min</strong>加入S集合中，n次之后就得出所有的最短距离<br>3.将不在S中dist_min的点-&gt;t<br>4.t-&gt;S加入最短路集合<br>5.用t更新到其他点的距离</p>
 <h5 id="Dijkstra-堆优化O-mlogm"><a href="#Dijkstra-堆优化O-mlogm" class="headerlink" title="Dijkstra-堆优化O(mlogm)"></a>Dijkstra-堆优化O(mlogm)</h5><p>1.利用邻接表，优先队列<br>2.在priority_queue[HTML_REMOVED], greater[HTML_REMOVED] &gt; heap;中将返回堆顶<br>3.利用堆顶来更新其他点，并加入堆中类似宽搜</p>
 <h5 id="Bellman-fordO-nm"><a href="#Bellman-fordO-nm" class="headerlink" title="Bellman_fordO(nm)"></a>Bellman_fordO(nm)</h5><p>1.注意连锁想象需要备份, struct Edge{inta,b,c} Edge[M];<br>2.初始化dist, 松弛dist[x.b] &#x3D; min(dist[x.b], backup[x.a]+x.w);<br>3.松弛k次，每次访问m条边</p>
 <h5 id="Spfa-O-n-O-nm"><a href="#Spfa-O-n-O-nm" class="headerlink" title="Spfa O(n)~O(nm)"></a>Spfa O(n)~O(nm)</h5><p>1.利用队列优化仅加入修改过的地方<br>2.for k次<br>3.for 所有边利用宽搜模型去优化bellman_ford算法<br>4.更新队列中当前点的所有出边</p>
 <h5 id="Floyd-O-n-3"><a href="#Floyd-O-n-3" class="headerlink" title="Floyd O(n^3)"></a>Floyd O(n^3)</h5><p>1.初始化d<br>2.k, i, j 去更新d</p>
-</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/" data-id="clewxiw780002r8to7tfvbom5" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/" data-id="clfxxrctv0001lkto0l6ydk1w" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -152,70 +150,13 @@
 <li>⭐️由于SPFA算法是由Bellman_ford算法优化而来，在最坏的情况下时间复杂度和它一样即时间复杂度为 O(nm)O(nm) ，假如题目时间允许可以直接用SPFA算法去解Dijkstra算法的题目。(好像SPFA有点小小万能的感觉?)</li>
 <li>⭐️求负环一般使用SPFA算法，方法是用一个cnt数组记录每个点到源点的边数，一个点被更新一次就+1，一旦有点的边数达到了n那就证明存在了负环。</li>
 </ol>
-<blockquote>
-<p>Dijkstra-朴素O(n^2)</p>
-<p>初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离<br>将不在S中dist_min的点-&gt;t<br>t-&gt;S加入最短路集合<br>用t更新到其他点的距离<br>Dijkstra-堆优化O(mlogm)</p>
-<p>利用邻接表，优先队列<br>在priority_queue[HTML_REMOVED], greater[HTML_REMOVED] &gt; heap;中将返回堆顶<br>利用堆顶来更新其他点，并加入堆中类似宽搜<br>Bellman_fordO(nm)</p>
-<p>注意连锁想象需要备份, struct Edge{inta,b,c} Edge[M];<br>初始化dist, 松弛dist[x.b] &#x3D; min(dist[x.b], backup[x.a]+x.w);<br>松弛k次，每次访问m条边<br>Spfa O(n)~O(nm)</p>
-<p>利用队列优化仅加入修改过的地方<br>for k次<br>for 所有边利用宽搜模型去优化bellman_ford算法<br>更新队列中当前点的所有出边<br>Floyd O(n^3)</p>
-<p>初始化d<br>k, i, j 去更新d</p>
-</blockquote>
+<p>Tips：</p>
+<p>1.string和char的输入！建议cin&gt;&gt;,或者char a[2];scanf(“%s”,a);&#x2F;&#x2F;注意a前面没有&amp;，这样比%c能够避免空格回车的影响</p>
 <h5 id="by-xf"><a href="#by-xf" class="headerlink" title="by xf"></a>by xf</h5>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="clewxiw760001r8to5uleb1u7" data-title="刷题笔记" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/04/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-03-04T08:57:08.550Z" itemprop="datePublished">2023-03-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/04/hello-world/" data-id="clewxiw710000r8to0892ewrn" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="clfxxrctp0000lkto7nlzagvh" data-title="刷题笔记" class="article-share-link">Share</a>
       
       
       
@@ -263,10 +204,6 @@
         
           <li>
             <a href="/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/04/hello-world/">Hello World</a>
           </li>
         
       </ul>

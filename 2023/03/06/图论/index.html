@@ -6,15 +6,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Dijkstra-朴素O(n^2)1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离3.将不在S中dist_min的点-&gt;t4.t-&gt;S加入最短路集合5.用t更新到其他点的距离 Dijkstra-堆优化O(mlogm)1.利用邻接表，优先队列2.在pri">
+  <meta name="description" content="Dijkstra-朴素O(n^2)1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离3.将不在S中dist_min的点-&gt;t4.t-&gt;S加入最短路集合5.用t更新到其他点的距离 Dijkstra-堆优化O(mlogm)1.利用邻接表，优先队列2.在prio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Dijkstra-朴素O(n^2)1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离3.将不在S中dist_min的点-&gt;t4.t-&gt;S加入最短路集合5.用t更新到其他点的距离 Dijkstra-堆优化O(mlogm)1.利用邻接表，优先队列2.在pri">
+<meta property="og:description" content="Dijkstra-朴素O(n^2)1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离3.将不在S中dist_min的点-&gt;t4.t-&gt;S加入最短路集合5.用t更新到其他点的距离 Dijkstra-堆优化O(mlogm)1.利用邻接表，优先队列2.在prio">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-06T14:33:25.321Z">
-<meta property="article:modified_time" content="2023-03-06T14:35:50.472Z">
+<meta property="article:modified_time" content="2023-03-07T14:44:21.419Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -85,18 +85,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <blockquote>
-<h5 id="Dijkstra-朴素O-n-2"><a href="#Dijkstra-朴素O-n-2" class="headerlink" title="Dijkstra-朴素O(n^2)"></a>Dijkstra-朴素O(n^2)</h5><p>1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离<br>3.将不在S中dist_min的点-&gt;t<br>4.t-&gt;S加入最短路集合<br>5.用t更新到其他点的距离</p>
+        <h5 id="Dijkstra-朴素O-n-2"><a href="#Dijkstra-朴素O-n-2" class="headerlink" title="Dijkstra-朴素O(n^2)"></a>Dijkstra-朴素O(n^2)</h5><p>1.<strong>初始化</strong>距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>2.for n次循环 每次循环确定<strong>一个min</strong>加入S集合中，n次之后就得出所有的最短距离<br>3.将不在S中dist_min的点-&gt;t<br>4.t-&gt;S加入最短路集合<br>5.用t更新到其他点的距离</p>
 <h5 id="Dijkstra-堆优化O-mlogm"><a href="#Dijkstra-堆优化O-mlogm" class="headerlink" title="Dijkstra-堆优化O(mlogm)"></a>Dijkstra-堆优化O(mlogm)</h5><p>1.利用邻接表，优先队列<br>2.在priority_queue[HTML_REMOVED], greater[HTML_REMOVED] &gt; heap;中将返回堆顶<br>3.利用堆顶来更新其他点，并加入堆中类似宽搜</p>
 <h5 id="Bellman-fordO-nm"><a href="#Bellman-fordO-nm" class="headerlink" title="Bellman_fordO(nm)"></a>Bellman_fordO(nm)</h5><p>1.注意连锁想象需要备份, struct Edge{inta,b,c} Edge[M];<br>2.初始化dist, 松弛dist[x.b] &#x3D; min(dist[x.b], backup[x.a]+x.w);<br>3.松弛k次，每次访问m条边</p>
 <h5 id="Spfa-O-n-O-nm"><a href="#Spfa-O-n-O-nm" class="headerlink" title="Spfa O(n)~O(nm)"></a>Spfa O(n)~O(nm)</h5><p>1.利用队列优化仅加入修改过的地方<br>2.for k次<br>3.for 所有边利用宽搜模型去优化bellman_ford算法<br>4.更新队列中当前点的所有出边</p>
 <h5 id="Floyd-O-n-3"><a href="#Floyd-O-n-3" class="headerlink" title="Floyd O(n^3)"></a>Floyd O(n^3)</h5><p>1.初始化d<br>2.k, i, j 去更新d</p>
-</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/" data-id="clewxiw780002r8to7tfvbom5" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/" data-id="clfxxrctv0001lkto0l6ydk1w" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -152,10 +150,6 @@
         
           <li>
             <a href="/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/04/hello-world/">Hello World</a>
           </li>
         
       </ul>

@@ -14,7 +14,7 @@
 <meta property="og:description" content="算法的浪漫 动态规划01背包，完全背包，多重背包，区间dp，状态压缩dp，树形dp，记忆化搜索 贪心算法区间按左端点排序，按右端点排序，哈夫曼树 回溯递归回溯处理好变量 算法总结-2023.3.5 《八数码》总结状态表示：九宫格用string表示状态，即转为一位，需要存进queue 状态转移：用string find函数找到一维位置，一维位置转化为二维位置，再上下左右移动，用vx，vy数组表示四个">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-06T09:01:23.000Z">
-<meta property="article:modified_time" content="2023-03-06T14:34:04.038Z">
+<meta property="article:modified_time" content="2023-03-07T14:46:47.449Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -119,19 +119,13 @@
 <li>⭐️由于SPFA算法是由Bellman_ford算法优化而来，在最坏的情况下时间复杂度和它一样即时间复杂度为 O(nm)O(nm) ，假如题目时间允许可以直接用SPFA算法去解Dijkstra算法的题目。(好像SPFA有点小小万能的感觉?)</li>
 <li>⭐️求负环一般使用SPFA算法，方法是用一个cnt数组记录每个点到源点的边数，一个点被更新一次就+1，一旦有点的边数达到了n那就证明存在了负环。</li>
 </ol>
-<blockquote>
-<p>Dijkstra-朴素O(n^2)</p>
-<p>初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;<br>for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离<br>将不在S中dist_min的点-&gt;t<br>t-&gt;S加入最短路集合<br>用t更新到其他点的距离<br>Dijkstra-堆优化O(mlogm)</p>
-<p>利用邻接表，优先队列<br>在priority_queue[HTML_REMOVED], greater[HTML_REMOVED] &gt; heap;中将返回堆顶<br>利用堆顶来更新其他点，并加入堆中类似宽搜<br>Bellman_fordO(nm)</p>
-<p>注意连锁想象需要备份, struct Edge{inta,b,c} Edge[M];<br>初始化dist, 松弛dist[x.b] &#x3D; min(dist[x.b], backup[x.a]+x.w);<br>松弛k次，每次访问m条边<br>Spfa O(n)~O(nm)</p>
-<p>利用队列优化仅加入修改过的地方<br>for k次<br>for 所有边利用宽搜模型去优化bellman_ford算法<br>更新队列中当前点的所有出边<br>Floyd O(n^3)</p>
-<p>初始化d<br>k, i, j 去更新d</p>
-</blockquote>
+<p>Tips：</p>
+<p>1.string和char的输入！建议cin&gt;&gt;,或者char a[2];scanf(“%s”,a);&#x2F;&#x2F;注意a前面没有&amp;，这样比%c能够避免空格回车的影响</p>
 <h5 id="by-xf"><a href="#by-xf" class="headerlink" title="by xf"></a>by xf</h5>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="clewxiw760001r8to5uleb1u7" data-title="刷题笔记" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" data-id="clfxxrctp0000lkto7nlzagvh" data-title="刷题笔记" class="article-share-link">Share</a>
       
       
       
@@ -150,11 +144,6 @@
       </div>
     </a>
   
-  
-    <a href="/2023/03/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
   
 </nav>
 
@@ -196,10 +185,6 @@
         
           <li>
             <a href="/2023/03/06/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">刷题笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/04/hello-world/">Hello World</a>
           </li>
         
       </ul>
