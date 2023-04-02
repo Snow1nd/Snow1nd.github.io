@@ -14,7 +14,7 @@
 <meta property="og:description" content="Dijkstra-朴素O(n^2)1.初始化距离数组, dist[1] &#x3D; 0, dist[i] &#x3D; inf;2.for n次循环 每次循环确定一个min加入S集合中，n次之后就得出所有的最短距离3.将不在S中dist_min的点-&gt;t4.t-&gt;S加入最短路集合5.用t更新到其他点的距离 Dijkstra-堆优化O(mlogm)1.利用邻接表，优先队列2.在prio">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-06T14:33:25.321Z">
-<meta property="article:modified_time" content="2023-03-07T14:44:21.419Z">
+<meta property="article:modified_time" content="2023-04-02T10:25:58.029Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -90,11 +90,12 @@
 <h5 id="Bellman-fordO-nm"><a href="#Bellman-fordO-nm" class="headerlink" title="Bellman_fordO(nm)"></a>Bellman_fordO(nm)</h5><p>1.注意连锁想象需要备份, struct Edge{inta,b,c} Edge[M];<br>2.初始化dist, 松弛dist[x.b] &#x3D; min(dist[x.b], backup[x.a]+x.w);<br>3.松弛k次，每次访问m条边</p>
 <h5 id="Spfa-O-n-O-nm"><a href="#Spfa-O-n-O-nm" class="headerlink" title="Spfa O(n)~O(nm)"></a>Spfa O(n)~O(nm)</h5><p>1.利用队列优化仅加入修改过的地方<br>2.for k次<br>3.for 所有边利用宽搜模型去优化bellman_ford算法<br>4.更新队列中当前点的所有出边</p>
 <h5 id="Floyd-O-n-3"><a href="#Floyd-O-n-3" class="headerlink" title="Floyd O(n^3)"></a>Floyd O(n^3)</h5><p>1.初始化d<br>2.k, i, j 去更新d</p>
+<p>中国海洋大学-薛丰</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/" data-id="clfxxrctv0001lkto0l6ydk1w" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/06/%E5%9B%BE%E8%AE%BA/" data-id="clfz9eosy0001m8to9x2w642y" data-title="" class="article-share-link">Share</a>
       
       
       
